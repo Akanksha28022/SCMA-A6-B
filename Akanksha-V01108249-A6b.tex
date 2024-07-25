@@ -1,0 +1,1088 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Akanksha-V01108249-A6b.R},
+  pdfauthor={USER},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Akanksha-V01108249-A6b.R}
+\author{USER}
+\date{2024-07-25}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Set working directory and load necessary libraries}
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"C:}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Users}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{USER}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Downloads"}\NormalTok{)}
+\FunctionTok{getwd}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "C:/Users/USER/Downloads"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load necessary libraries}
+\FunctionTok{library}\NormalTok{(readxl)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'readxl' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'dplyr' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(janitor)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'janitor' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'janitor'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     chisq.test, fisher.test
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(urca)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'urca' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(vars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'vars' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: MASS
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'MASS'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:dplyr':
+## 
+##     select
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: strucchange
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'strucchange' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: zoo
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'zoo' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'zoo'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     as.Date, as.Date.numeric
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: sandwich
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'sandwich' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: lmtest
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'lmtest' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load the dataset}
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{\textquotesingle{}pinksheet.xlsx\textquotesingle{}}\NormalTok{, }\AttributeTok{sheet =} \StringTok{"Monthly Prices"}\NormalTok{, }\AttributeTok{skip =} \DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## New names:
+## * `` -> `...1`
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Rename the first column to "Date"}
+\FunctionTok{colnames}\NormalTok{(df)[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{\textquotesingle{}Date\textquotesingle{}}
+\CommentTok{\# Convert the Date column to Date format}
+\NormalTok{df}\SpecialCharTok{$}\NormalTok{Date }\OtherTok{\textless{}{-}} \FunctionTok{as.Date}\NormalTok{(}\FunctionTok{paste0}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Date, }\StringTok{"01"}\NormalTok{), }\AttributeTok{format =} \StringTok{"\%YM\%m\%d"}\NormalTok{)}
+\FunctionTok{str}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [774 x 72] (S3: tbl_df/tbl/data.frame)
+##  $ Date         : Date[1:774], format: "1960-01-01" "1960-02-01" ...
+##  $ CRUDE_PETRO  : num [1:774] 1.63 1.63 1.63 1.63 1.63 ...
+##  $ CRUDE_BRENT  : num [1:774] 1.63 1.63 1.63 1.63 1.63 ...
+##  $ CRUDE_DUBAI  : num [1:774] 1.63 1.63 1.63 1.63 1.63 ...
+##  $ CRUDE_WTI    : chr [1:774] "…" "…" "…" "…" ...
+##  $ COAL_AUS     : chr [1:774] "…" "…" "…" "…" ...
+##  $ COAL_SAFRICA : chr [1:774] "…" "…" "…" "…" ...
+##  $ NGAS_US      : num [1:774] 0.14 0.14 0.14 0.14 0.14 0.14 0.14 0.14 0.14 0.14 ...
+##  $ NGAS_EUR     : num [1:774] 0.405 0.405 0.405 0.405 0.405 ...
+##  $ NGAS_JP      : chr [1:774] "…" "…" "…" "…" ...
+##  $ iNATGAS      : chr [1:774] "…" "…" "…" "…" ...
+##  $ COCOA        : num [1:774] 0.634 0.608 0.579 0.598 0.6 ...
+##  $ COFFEE_ARABIC: num [1:774] 0.941 0.947 0.928 0.93 0.92 ...
+##  $ COFFEE_ROBUS : num [1:774] 0.697 0.689 0.689 0.685 0.691 ...
+##  $ TEA_AVG      : num [1:774] 1.03 1.03 1.03 1.03 1.03 ...
+##  $ TEA_COLOMBO  : num [1:774] 0.93 0.93 0.93 0.93 0.93 ...
+##  $ TEA_KOLKATA  : num [1:774] 1.12 1.12 1.12 1.12 1.12 ...
+##  $ TEA_MOMBASA  : num [1:774] 1.04 1.04 1.04 1.04 1.04 ...
+##  $ COCONUT_OIL  : num [1:774] 390 379 361 338 321 287 298 292 276 280 ...
+##  $ GRNUT        : chr [1:774] "…" "…" "…" "…" ...
+##  $ FISH_MEAL    : chr [1:774] "…" "…" "…" "…" ...
+##  $ GRNUT_OIL    : num [1:774] 334 341 338 333 335 334 336 336 323 310 ...
+##  $ PALM_OIL     : num [1:774] 233 229 225 225 225 219 221 225 224 222 ...
+##  $ PLMKRNL_OIL  : chr [1:774] "…" "…" "…" "…" ...
+##  $ SOYBEANS     : num [1:774] 94 91 92 93 93 91 92 93 92 88 ...
+##  $ SOYBEAN_OIL  : num [1:774] 204 201 201 207 209 218 224 237 231 237 ...
+##  $ SOYBEAN_MEAL : num [1:774] 91.9 86.7 84.1 86.7 81.5 80.3 77.7 77.7 82.8 75.1 ...
+##  $ RAPESEED_OIL : chr [1:774] "…" "…" "…" "…" ...
+##  $ SUNFLOWER_OIL: chr [1:774] "…" "…" "…" "…" ...
+##  $ BARLEY       : chr [1:774] "20.364800394620001" "20.41046354993" "20.718174862910001" "20.638036355250001" ...
+##  $ MAIZE        : num [1:774] 45 44 45 45 48 47 47 47 46 42 ...
+##  $ SORGHUM      : chr [1:774] "39" "39" "35" "35" ...
+##  $ RICE_05      : num [1:774] 104 104 104 101 102 ...
+##  $ RICE_25      : chr [1:774] "…" "…" "…" "…" ...
+##  $ RICE_A1      : chr [1:774] "…" "…" "…" "…" ...
+##  $ RICE_05_VNM  : chr [1:774] "…" "…" "…" "…" ...
+##  $ WHEAT_US_SRW : chr [1:774] "…" "…" "…" "…" ...
+##  $ WHEAT_US_HRW : num [1:774] 59.9 61 61.7 61 57.7 ...
+##  $ BANANA_EU    : chr [1:774] "…" "…" "…" "…" ...
+##  $ BANANA_US    : num [1:774] 0.143 0.143 0.143 0.143 0.149 ...
+##  $ ORANGE       : num [1:774] 0.115 0.109 0.132 0.136 0.144 ...
+##  $ BEEF         : num [1:774] 0.706 0.712 0.769 0.838 0.756 ...
+##  $ CHICKEN      : num [1:774] 0.297 0.297 0.298 0.299 0.299 ...
+##  $ LAMB         : chr [1:774] "…" "…" "…" "…" ...
+##  $ SHRIMP_MEX   : chr [1:774] "1.433003" "1.4991416" "1.4991416" "1.6755112000000001" ...
+##  $ SUGAR_EU     : num [1:774] 0.122 0.122 0.122 0.122 0.122 ...
+##  $ SUGAR_US     : num [1:774] 0.117 0.119 0.121 0.123 0.121 ...
+##  $ SUGAR_WLD    : num [1:774] 0.0666 0.0679 0.0683 0.0681 0.0683 0.0666 0.0728 0.0741 0.0725 0.0538 ...
+##  $ TOBAC_US     : num [1:774] 1737 1737 1737 1737 1737 ...
+##  $ LOGS_CMR     : chr [1:774] "…" "…" "…" "…" ...
+##  $ LOGS_MYS     : num [1:774] 31.9 31.9 31.9 31.9 31.9 ...
+##  $ SAWNWD_CMR   : chr [1:774] "…" "…" "…" "…" ...
+##  $ SAWNWD_MYS   : num [1:774] 149 149 149 149 149 ...
+##  $ PLYWOOD      : chr [1:774] "…" "…" "…" "…" ...
+##  $ COTTON_A_INDX: num [1:774] 0.649 0.645 0.646 0.643 0.647 ...
+##  $ RUBBER_TSR20 : chr [1:774] "…" "…" "…" "…" ...
+##  $ RUBBER1_MYSG : num [1:774] 0.822 0.829 0.858 0.864 0.928 ...
+##  $ PHOSROCK     : chr [1:774] "13" "13" "13" "13" ...
+##  $ DAP          : chr [1:774] "..." "..." "..." "..." ...
+##  $ TSP          : num [1:774] 53 53 53 53 53 53 53 53 53 53 ...
+##  $ UREA_EE_BULK : num [1:774] 42.2 42.2 42.2 42.2 42.2 ...
+##  $ POTASH       : num [1:774] 28.5 28.5 28.5 28.5 28.5 28.5 28.5 28.5 28.5 28.5 ...
+##  $ ALUMINUM     : num [1:774] 511 511 511 511 511 ...
+##  $ IRON_ORE     : num [1:774] 11.4 11.4 11.4 11.4 11.4 ...
+##  $ COPPER       : num [1:774] 715 728 685 723 685 ...
+##  $ LEAD         : num [1:774] 206 204 210 214 213 ...
+##  $ Tin          : num [1:774] 2180 2180 2174 2178 2163 ...
+##  $ NICKEL       : num [1:774] 1631 1631 1631 1631 1631 ...
+##  $ Zinc         : num [1:774] 261 245 249 255 254 ...
+##  $ GOLD         : num [1:774] 35.3 35.3 35.3 35.3 35.3 ...
+##  $ PLATINUM     : num [1:774] 83.5 83.5 83.5 83.5 83.5 83.5 83.5 83.5 83.5 83.5 ...
+##  $ SILVER       : num [1:774] 0.914 0.914 0.914 0.914 0.914 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Select specific columns (Date and selected commodities)}
+\NormalTok{commodity }\OtherTok{\textless{}{-}}\NormalTok{ df[,}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{25}\NormalTok{,}\DecValTok{70}\NormalTok{,}\DecValTok{72}\NormalTok{,}\DecValTok{61}\NormalTok{,}\DecValTok{31}\NormalTok{)] }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{clean\_names}\NormalTok{()}
+
+\FunctionTok{str}\NormalTok{(commodity)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [774 x 7] (S3: tbl_df/tbl/data.frame)
+##  $ date        : Date[1:774], format: "1960-01-01" "1960-02-01" ...
+##  $ crude_brent : num [1:774] 1.63 1.63 1.63 1.63 1.63 ...
+##  $ soybeans    : num [1:774] 94 91 92 93 93 91 92 93 92 88 ...
+##  $ gold        : num [1:774] 35.3 35.3 35.3 35.3 35.3 ...
+##  $ silver      : num [1:774] 0.914 0.914 0.914 0.914 0.914 ...
+##  $ urea_ee_bulk: num [1:774] 42.2 42.2 42.2 42.2 42.2 ...
+##  $ maize       : num [1:774] 45 44 45 45 48 47 47 47 46 42 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Remove the Date column for analysis}
+\NormalTok{commodity\_data }\OtherTok{\textless{}{-}}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(commodity, }\SpecialCharTok{{-}}\NormalTok{date)}
+
+\CommentTok{\# Column names to test (if you want to specify particular columns)}
+\NormalTok{columns\_to\_test }\OtherTok{\textless{}{-}} \FunctionTok{names}\NormalTok{(commodity\_data)}
+
+\CommentTok{\# Initialize counters and lists for stationary and non{-}stationary columns}
+\NormalTok{non\_stationary\_count }\OtherTok{\textless{}{-}} \DecValTok{0}
+\NormalTok{stationary\_columns }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{()}
+\NormalTok{non\_stationary\_columns }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{()}
+
+\CommentTok{\# Loop through each column and perform the ADF test}
+\ControlFlowTok{for}\NormalTok{ (col }\ControlFlowTok{in}\NormalTok{ columns\_to\_test) \{}
+\NormalTok{  adf\_result }\OtherTok{\textless{}{-}} \FunctionTok{ur.df}\NormalTok{(commodity\_data[[col]], }\AttributeTok{type =} \StringTok{"none"}\NormalTok{, }\AttributeTok{selectlags =} \StringTok{"AIC"}\NormalTok{)}
+\NormalTok{  p\_value }\OtherTok{\textless{}{-}}\NormalTok{ adf\_result}\SpecialCharTok{@}\NormalTok{testreg}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{]  }\CommentTok{\# Extract p{-}value for the test}
+  \FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{ADF test result for column:"}\NormalTok{, col, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+  \FunctionTok{print}\NormalTok{(}\FunctionTok{summary}\NormalTok{(adf\_result))}
+  
+  \CommentTok{\# Check if the p{-}value is greater than 0.05 (commonly used threshold)}
+  \ControlFlowTok{if}\NormalTok{ (p\_value }\SpecialCharTok{\textgreater{}} \FloatTok{0.05}\NormalTok{) \{}
+\NormalTok{    non\_stationary\_count }\OtherTok{\textless{}{-}}\NormalTok{ non\_stationary\_count }\SpecialCharTok{+} \DecValTok{1}
+\NormalTok{    non\_stationary\_columns }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(non\_stationary\_columns, col)}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{    stationary\_columns }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(stationary\_columns, col)}
+\NormalTok{  \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## ADF test result for column: crude_brent 
+## 
+## ############################################### 
+## # Augmented Dickey-Fuller Test Unit Root Test # 
+## ############################################### 
+## 
+## Test regression none 
+## 
+## 
+## Call:
+## lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -20.9037  -0.5974   0.0050   1.1470  16.6539 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## z.lag.1    -0.003064   0.002755  -1.112    0.266    
+## z.diff.lag  0.339145   0.033979   9.981   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 3.579 on 770 degrees of freedom
+## Multiple R-squared:  0.1148, Adjusted R-squared:  0.1125 
+## F-statistic: 49.92 on 2 and 770 DF,  p-value: < 2.2e-16
+## 
+## 
+## Value of test-statistic is: -1.1122 
+## 
+## Critical values for test statistics: 
+##       1pct  5pct 10pct
+## tau1 -2.58 -1.95 -1.62
+## 
+## 
+## ADF test result for column: soybeans 
+## 
+## ############################################### 
+## # Augmented Dickey-Fuller Test Unit Root Test # 
+## ############################################### 
+## 
+## Test regression none 
+## 
+## 
+## Call:
+## lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -155.919   -5.963    0.738    6.366   98.018 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## z.lag.1    -0.0009988  0.0021969  -0.455    0.649    
+## z.diff.lag  0.1463247  0.0357081   4.098 4.61e-05 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 19.65 on 770 degrees of freedom
+## Multiple R-squared:  0.02141,    Adjusted R-squared:  0.01887 
+## F-statistic: 8.423 on 2 and 770 DF,  p-value: 0.0002406
+## 
+## 
+## Value of test-statistic is: -0.4547 
+## 
+## Critical values for test statistics: 
+##       1pct  5pct 10pct
+## tau1 -2.58 -1.95 -1.62
+## 
+## 
+## ADF test result for column: gold 
+## 
+## ############################################### 
+## # Augmented Dickey-Fuller Test Unit Root Test # 
+## ############################################### 
+## 
+## Test regression none 
+## 
+## 
+## Call:
+## lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -120.209   -7.822   -0.123    7.203  205.516 
+## 
+## Coefficients:
+##            Estimate Std. Error t value Pr(>|t|)    
+## z.lag.1    0.003500   0.001358   2.577   0.0102 *  
+## z.diff.lag 0.207978   0.035496   5.859 6.89e-09 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 29.52 on 770 degrees of freedom
+## Multiple R-squared:  0.05795,    Adjusted R-squared:  0.05551 
+## F-statistic: 23.69 on 2 and 770 DF,  p-value: 1.041e-10
+## 
+## 
+## Value of test-statistic is: 2.577 
+## 
+## Critical values for test statistics: 
+##       1pct  5pct 10pct
+## tau1 -2.58 -1.95 -1.62
+## 
+## 
+## ADF test result for column: silver 
+## 
+## ############################################### 
+## # Augmented Dickey-Fuller Test Unit Root Test # 
+## ############################################### 
+## 
+## Test regression none 
+## 
+## 
+## Call:
+## lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -9.3365 -0.1406  0.0052  0.2397 14.8616 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## z.lag.1    -0.004015   0.003532  -1.137    0.256    
+## z.diff.lag  0.285108   0.034680   8.221 8.54e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 1.212 on 770 degrees of freedom
+## Multiple R-squared:  0.08089,    Adjusted R-squared:  0.0785 
+## F-statistic: 33.88 on 2 and 770 DF,  p-value: 7.874e-15
+## 
+## 
+## Value of test-statistic is: -1.1367 
+## 
+## Critical values for test statistics: 
+##       1pct  5pct 10pct
+## tau1 -2.58 -1.95 -1.62
+## 
+## 
+## ADF test result for column: urea_ee_bulk 
+## 
+## ############################################### 
+## # Augmented Dickey-Fuller Test Unit Root Test # 
+## ############################################### 
+## 
+## Test regression none 
+## 
+## 
+## Call:
+## lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -244.590   -0.837    0.913    5.203  287.017 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## z.lag.1    -0.011276   0.005069  -2.225   0.0264 *  
+## z.diff.lag  0.214902   0.035306   6.087 1.82e-09 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 30.67 on 770 degrees of freedom
+## Multiple R-squared:  0.0495, Adjusted R-squared:  0.04703 
+## F-statistic: 20.05 on 2 and 770 DF,  p-value: 3.243e-09
+## 
+## 
+## Value of test-statistic is: -2.2248 
+## 
+## Critical values for test statistics: 
+##       1pct  5pct 10pct
+## tau1 -2.58 -1.95 -1.62
+## 
+## 
+## ADF test result for column: maize 
+## 
+## ############################################### 
+## # Augmented Dickey-Fuller Test Unit Root Test # 
+## ############################################### 
+## 
+## Test regression none 
+## 
+## 
+## Call:
+## lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -50.110  -2.637   0.164   3.343  66.665 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## z.lag.1    -0.001671   0.002228  -0.750    0.453    
+## z.diff.lag  0.240599   0.035031   6.868 1.34e-11 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 8.791 on 770 degrees of freedom
+## Multiple R-squared:  0.05792,    Adjusted R-squared:  0.05547 
+## F-statistic: 23.67 on 2 and 770 DF,  p-value: 1.058e-10
+## 
+## 
+## Value of test-statistic is: -0.75 
+## 
+## Critical values for test statistics: 
+##       1pct  5pct 10pct
+## tau1 -2.58 -1.95 -1.62
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Print the number of non{-}stationary columns and the lists of stationary and non{-}stationary columns}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Number of non{-}stationary columns:"}\NormalTok{, non\_stationary\_count, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Number of non-stationary columns: 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Non{-}stationary columns:"}\NormalTok{, non\_stationary\_columns, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Non-stationary columns:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Stationary columns:"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Stationary columns:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{stationary\_columns}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] "crude_brent"
+## 
+## [[2]]
+## [1] "soybeans"
+## 
+## [[3]]
+## [1] "gold"
+## 
+## [[4]]
+## [1] "silver"
+## 
+## [[5]]
+## [1] "urea_ee_bulk"
+## 
+## [[6]]
+## [1] "maize"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Co{-}Integration Test (Johansen\textquotesingle{}s Test)}
+\CommentTok{\# Determining the number of lags to use (you can use information criteria like AIC, BIC)}
+\NormalTok{lags }\OtherTok{\textless{}{-}} \FunctionTok{VARselect}\NormalTok{(commodity\_data, }\AttributeTok{lag.max =} \DecValTok{10}\NormalTok{, }\AttributeTok{type =} \StringTok{"const"}\NormalTok{)}
+\NormalTok{lag\_length }\OtherTok{\textless{}{-}}\NormalTok{ lags}\SpecialCharTok{$}\NormalTok{selection[}\DecValTok{1}\NormalTok{] }\CommentTok{\# Choosing the lag with the lowest AIC}
+
+\NormalTok{vecm\_model }\OtherTok{\textless{}{-}} \FunctionTok{ca.jo}\NormalTok{(commodity\_data, }\AttributeTok{ecdet =} \StringTok{\textquotesingle{}const\textquotesingle{}}\NormalTok{, }\AttributeTok{type =} \StringTok{\textquotesingle{}eigen\textquotesingle{}}\NormalTok{, }\AttributeTok{K =}\NormalTok{ lag\_length, }\AttributeTok{spec =} \StringTok{\textquotesingle{}transitory\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\# Summary of the Co{-}Integration Test}
+\FunctionTok{summary}\NormalTok{(vecm\_model)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## ###################### 
+## # Johansen-Procedure # 
+## ###################### 
+## 
+## Test type: maximal eigenvalue statistic (lambda max) , without linear trend and constant in cointegration 
+## 
+## Eigenvalues (lambda):
+## [1]  8.998240e-02  5.752097e-02  3.735171e-02  2.608764e-02  2.251395e-02
+## [6]  1.054366e-02 -2.260796e-17
+## 
+## Values of teststatistic and critical values of test:
+## 
+##           test 10pct  5pct  1pct
+## r <= 5 |  8.11  7.52  9.24 12.97
+## r <= 4 | 17.42 13.75 15.67 20.20
+## r <= 3 | 20.22 19.77 22.00 26.81
+## r <= 2 | 29.12 25.56 28.14 33.24
+## r <= 1 | 45.32 31.66 34.40 39.79
+## r = 0  | 72.13 37.45 40.30 46.82
+## 
+## Eigenvectors, normalised to first column:
+## (These are the cointegration relations)
+## 
+##                 crude_brent.l1 soybeans.l1      gold.l1   silver.l1
+## crude_brent.l1    1.000000e+00  1.00000000   1.00000000  1.00000000
+## soybeans.l1       1.243452e+00  1.25304239  -0.07842408 -0.42565991
+## gold.l1          -8.613082e-03  0.01252197   0.01895289  0.07014442
+## silver.l1        -1.070903e+01  0.61967846  -8.77188803 -3.26693838
+## urea_ee_bulk.l1  -1.402966e+00  0.27382244   0.02886597 -0.06688680
+## maize.l1          6.220737e-01 -3.92903372   0.58475577  0.22894154
+## constant         -1.489974e+02 44.45252397 -20.86854041 59.02679846
+##                 urea_ee_bulk.l1     maize.l1     constant
+## crude_brent.l1       1.00000000   1.00000000   1.00000000
+## soybeans.l1         -0.07812369   0.02283558   0.34711296
+## gold.l1              0.02089932  -0.08322472  -0.34922444
+## silver.l1           -0.67265684   2.81300312   5.68870719
+## urea_ee_bulk.l1     -0.16795279  -0.03897150  -0.05823248
+## maize.l1             0.13972070  -0.08400822  -0.19136095
+## constant             6.82242441 -12.61427193 127.59393688
+## 
+## Weights W:
+## (This is the loading matrix)
+## 
+##                crude_brent.l1  soybeans.l1      gold.l1    silver.l1
+## crude_brent.d     0.002205903 -0.003704822 -0.014381733 -0.007891362
+## soybeans.d       -0.029558007 -0.025188870 -0.057121330  0.103346533
+## gold.d           -0.009056880  0.035918817  0.047780832  0.016758828
+## silver.d          0.001273763  0.001680978  0.003678001  0.002437596
+## urea_ee_bulk.d    0.080887762  0.006757410 -0.121231005  0.051484771
+## maize.d          -0.013305363  0.020030509 -0.039752224  0.017974320
+##                urea_ee_bulk.l1     maize.l1      constant
+## crude_brent.d    -6.895101e-03 -0.010987446 -7.033640e-18
+## soybeans.d       -1.358234e-02 -0.029718135 -1.680915e-16
+## gold.d            1.141409e-01 -0.088970341  6.203017e-19
+## silver.d          4.024398e-05 -0.003923011  4.127846e-18
+## urea_ee_bulk.d    6.401763e-02  0.006050959  7.321021e-18
+## maize.d          -1.632041e-02 -0.008672063  4.315706e-17
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Determine the number of co{-}integrating relationships (r) based on the test}
+\CommentTok{\# Here, we assume r = 1 if there\textquotesingle{}s at least one significant eigenvalue}
+\NormalTok{r }\OtherTok{\textless{}{-}} \DecValTok{3} \CommentTok{\# Replace with the actual number from the test results}
+
+\ControlFlowTok{if}\NormalTok{ (r }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{) \{}
+  \CommentTok{\# If co{-}integration exists, estimate the VECM model}
+\NormalTok{  vecm }\OtherTok{\textless{}{-}} \FunctionTok{cajorls}\NormalTok{(vecm\_model, }\AttributeTok{r =}\NormalTok{ r)  }\CommentTok{\# r is the number of co{-}integration vectors}
+  
+  \CommentTok{\# Summary of the VECM model}
+  \FunctionTok{summary}\NormalTok{(vecm)}
+  
+  \CommentTok{\# Extracting the coefficients from the VECM model}
+\NormalTok{  vecm\_coefs }\OtherTok{\textless{}{-}}\NormalTok{ vecm}\SpecialCharTok{$}\NormalTok{rlm}\SpecialCharTok{$}\NormalTok{coefficients}
+  \FunctionTok{print}\NormalTok{(vecm\_coefs)}
+  
+  \CommentTok{\# Creating a VAR model for prediction using the VECM}
+\NormalTok{  vecm\_pred }\OtherTok{\textless{}{-}} \FunctionTok{vec2var}\NormalTok{(vecm\_model, }\AttributeTok{r =}\NormalTok{ r)}
+  
+  \CommentTok{\# Forecasting using the VECM model}
+  \CommentTok{\# Forecasting 12 steps ahead}
+\NormalTok{  forecast }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(vecm\_pred, }\AttributeTok{n.ahead =} \DecValTok{24}\NormalTok{)}
+  
+  \CommentTok{\# Plotting the forecast}
+  \FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{))  }\CommentTok{\# Adjust margins: c(bottom, left, top, right)}
+  \FunctionTok{plot}\NormalTok{(forecast)}
+  
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{ \{}
+  \CommentTok{\# If no co{-}integration exists, proceed with Unrestricted VAR Analysis}
+\NormalTok{  var\_model }\OtherTok{\textless{}{-}} \FunctionTok{VAR}\NormalTok{(commodity\_data, }\AttributeTok{p =}\NormalTok{ lag\_length, }\AttributeTok{type =} \StringTok{"const"}\NormalTok{)}
+  
+  \CommentTok{\# Summary of the VAR model}
+  \FunctionTok{summary}\NormalTok{(var\_model)}
+  
+  \CommentTok{\# Granger causality test}
+\NormalTok{  causality\_results }\OtherTok{\textless{}{-}} \FunctionTok{causality}\NormalTok{(var\_model)}
+  \FunctionTok{print}\NormalTok{(causality\_results)}
+  
+  \CommentTok{\# Forecasting using the VAR model}
+\NormalTok{  forecast }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(var\_model, }\AttributeTok{n.ahead =} \DecValTok{24}\NormalTok{)}
+  
+  \CommentTok{\# Plotting the forecast}
+  \FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{))  }\CommentTok{\# Adjust margins: c(bottom, left, top, right)}
+  \FunctionTok{plot}\NormalTok{(forecast)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                  crude_brent.d    soybeans.d       gold.d      silver.d
+## ect1             -0.0158806519 -0.1118682070  0.074642769  6.632743e-03
+## ect2             -0.0007714906 -0.0638369921  0.029998839  3.401756e-03
+## ect3             -0.0003379667 -0.0011434428  0.001433367  7.978687e-05
+## crude_brent.dl1   0.3198283908  0.3443498978  0.121043855  2.204896e-03
+## soybeans.dl1      0.0093172490  0.0946812517  0.023832800  2.266201e-04
+## gold.dl1          0.0014187220  0.0259051649  0.240850545 -1.925821e-03
+## silver.dl1       -0.0702311281 -0.3670786368  1.096648147  3.773757e-01
+## urea_ee_bulk.dl1 -0.0042728692 -0.0147800933 -0.131875574 -2.688073e-03
+## maize.dl1         0.0126570488  0.2774658122  0.316400732  1.303847e-02
+## crude_brent.dl2  -0.0543807904  0.0570272590  0.271334465  1.695307e-02
+## soybeans.dl2      0.0160512808  0.0601340870  0.027599349 -2.126802e-03
+## gold.dl2         -0.0039997611 -0.0462796646 -0.054729796  1.135936e-03
+## silver.dl2        0.0733443743  0.2095107503 -2.345899063 -2.709929e-01
+## urea_ee_bulk.dl2  0.0084573321 -0.0013708615  0.067900345 -8.696109e-04
+## maize.dl2        -0.0047730222 -0.0313026720  0.052487821  1.511212e-02
+## crude_brent.dl3  -0.0658862685  0.1745431650 -0.553450734 -1.722384e-02
+## soybeans.dl3     -0.0081758922 -0.0715436852 -0.176953936 -5.080400e-03
+## gold.dl3          0.0051131197  0.0575792803  0.102435068  2.496593e-03
+## silver.dl3        0.0139092573 -1.2210599854 -1.326173881 -5.889158e-02
+## urea_ee_bulk.dl3  0.0067822105 -0.0069360327 -0.050361408  1.467902e-03
+## maize.dl3         0.0178297828  0.1256055189  0.520323763  1.406092e-02
+## crude_brent.dl4  -0.0299127925  0.1041623330 -0.016988617  8.183038e-03
+## soybeans.dl4      0.0024366913  0.0403556917  0.080572018 -1.263501e-03
+## gold.dl4          0.0179737502  0.0007306947  0.015847245  3.079174e-03
+## silver.dl4       -0.1789303427 -0.7832719583  0.956766297 -8.117463e-03
+## urea_ee_bulk.dl4  0.0027173424 -0.0127145065 -0.025689547 -2.505806e-03
+## maize.dl4        -0.0156826169 -0.3089466262 -0.575382160 -1.279047e-02
+## crude_brent.dl5  -0.0035036729  0.0295095928 -0.254315519 -2.304101e-02
+## soybeans.dl5      0.0122847464 -0.0461005127 -0.099821693 -3.050931e-03
+## gold.dl5          0.0030289385 -0.0366462183  0.063384512  2.247859e-03
+## silver.dl5       -0.0478173797  0.4858325948  0.948021683 -4.831702e-02
+## urea_ee_bulk.dl5  0.0049014229  0.0238110782  0.089526994  2.851273e-03
+## maize.dl5         0.0131477809  0.1115906501  0.125958649  1.213451e-02
+## crude_brent.dl6  -0.1105647490 -0.1811455609 -0.381349463 -1.310430e-02
+## soybeans.dl6     -0.0129600962  0.0636882117 -0.034705436 -3.724711e-03
+## gold.dl6          0.0110837341  0.0816898200 -0.007079183  5.544855e-03
+## silver.dl6       -0.1599502063 -1.1233685147 -0.352025140 -1.527238e-01
+## urea_ee_bulk.dl6 -0.0096325667 -0.0768497829 -0.201590501 -6.392188e-03
+## maize.dl6         0.0204351084 -0.2810556882 -0.011389300  5.067805e-03
+## crude_brent.dl7   0.0669967625  0.0158814806  0.703549166  3.365683e-02
+## soybeans.dl7      0.0241959969  0.0859053946  0.096430919  9.958651e-04
+## gold.dl7         -0.0104996643 -0.0389062306 -0.058660324  5.065125e-04
+## silver.dl7        0.0478475379 -0.8161422405  2.117496279 -1.204477e-02
+## urea_ee_bulk.dl7  0.0080766781  0.0383362565  0.047687315  1.939176e-03
+## maize.dl7        -0.0305981940 -0.0679239555  0.134038575  9.602403e-03
+## crude_brent.dl8   0.0014255086 -0.2126227388  0.316115715  1.672963e-02
+## soybeans.dl8      0.0151701438 -0.0639231251  0.103234157  1.650484e-03
+## gold.dl8          0.0002213500  0.0720962498 -0.107703753 -3.395660e-03
+## silver.dl8       -0.0512928114 -0.3801434813  1.625579514  6.406983e-02
+## urea_ee_bulk.dl8  0.0017769052 -0.0071072398 -0.034845886 -1.866714e-03
+## maize.dl8        -0.0738082908 -0.0812941785 -0.251872139 -7.978703e-03
+##                  urea_ee_bulk.d       maize.d
+## ect1               -0.033585833 -0.0330270781
+## ect2                0.118554785  0.0116720300
+## ect3               -0.002909754 -0.0003879978
+## crude_brent.dl1     1.499259711 -0.0354210209
+## soybeans.dl1        0.009537724  0.0313077418
+## gold.dl1            0.067585152 -0.0317426664
+## silver.dl1         -4.995438936  0.2791645536
+## urea_ee_bulk.dl1    0.231475140  0.0176792561
+## maize.dl1           0.332391519  0.2575489439
+## crude_brent.dl2     0.280305940 -0.0323154333
+## soybeans.dl2        0.041020951  0.0295125676
+## gold.dl2            0.080248753 -0.0354011853
+## silver.dl2          1.948995186  0.8924557916
+## urea_ee_bulk.dl2   -0.085177203 -0.0288240251
+## maize.dl2          -0.135008285 -0.0493948058
+## crude_brent.dl3     1.029322404 -0.0789054044
+## soybeans.dl3       -0.163108185  0.0077021896
+## gold.dl3           -0.082295116  0.0211986247
+## silver.dl3         -0.450794423 -1.1278043762
+## urea_ee_bulk.dl3    0.049757460  0.0104523132
+## maize.dl3           0.117404149  0.0925260948
+## crude_brent.dl4    -0.274404950  0.0541016953
+## soybeans.dl4       -0.198875094  0.0349163838
+## gold.dl4            0.036818089 -0.0244211644
+## silver.dl4         -0.958458463  0.7733981558
+## urea_ee_bulk.dl4   -0.061788868 -0.0209953579
+## maize.dl4           0.188666698 -0.0455863996
+## crude_brent.dl5     0.089350785 -0.0094835225
+## soybeans.dl5       -0.079145072 -0.0019314510
+## gold.dl5            0.005663477  0.0179848934
+## silver.dl5         -0.207839445 -0.2694195836
+## urea_ee_bulk.dl5    0.110638890  0.0031901119
+## maize.dl5          -0.028266129 -0.0328377834
+## crude_brent.dl6     0.710903461 -0.1214828809
+## soybeans.dl6       -0.279153795  0.0279709959
+## gold.dl6            0.122825483  0.0393349540
+## silver.dl6         -0.959142523  0.0680583177
+## urea_ee_bulk.dl6   -0.127589442 -0.0032344232
+## maize.dl6           0.651218378 -0.0637566333
+## crude_brent.dl7     0.383860770 -0.0571667000
+## soybeans.dl7        0.187465251  0.0319340391
+## gold.dl7            0.163310130 -0.0563467450
+## silver.dl7         -3.815324482  0.4627059071
+## urea_ee_bulk.dl7   -0.096989493  0.0117623555
+## maize.dl7          -0.172901876  0.0025478083
+## crude_brent.dl8     0.296360276  0.1329178532
+## soybeans.dl8        0.038395608  0.0071650089
+## gold.dl8           -0.092688286  0.0280014100
+## silver.dl8          2.151987492 -0.2780175638
+## urea_ee_bulk.dl8    0.131601941 -0.0200688723
+## maize.dl8           0.069442988 -0.0395611183
+\end{verbatim}
+
+\includegraphics{Akanksha-V01108249-A6b_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{forecast}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $crude_brent
+##           fcst    lower     upper       CI
+##  [1,] 85.68931 79.22087  92.15775  6.46844
+##  [2,] 89.88251 79.14847 100.61655 10.73404
+##  [3,] 94.57387 80.55978 108.58797 14.01410
+##  [4,] 94.93460 78.41473 111.45447 16.51987
+##  [5,] 93.34287 74.80377 111.88197 18.53910
+##  [6,] 92.20858 71.73919 112.67797 20.46939
+##  [7,] 92.94050 70.88996 114.99103 22.05053
+##  [8,] 94.77325 71.30152 118.24498 23.47173
+##  [9,] 94.83322 70.14375 119.52268 24.68946
+## [10,] 93.82452 67.99767 119.65137 25.82685
+## [11,] 93.36246 66.41221 120.31271 26.95025
+## [12,] 94.30561 66.22630 122.38493 28.07932
+## [13,] 95.14372 65.99352 124.29392 29.15020
+## [14,] 94.53197 64.38855 124.67539 30.14342
+## [15,] 94.05402 62.96481 125.14324 31.08921
+## [16,] 94.27725 62.28188 126.27263 31.99538
+## [17,] 94.46390 61.61975 127.30806 32.84416
+## [18,] 94.33047 60.68911 127.97183 33.64136
+## [19,] 94.30773 59.88289 128.73257 34.42484
+## [20,] 94.76139 59.55744 129.96534 35.20395
+## [21,] 95.21078 59.23712 131.18443 35.97366
+## [22,] 95.44559 58.72038 132.17080 36.72521
+## [23,] 95.61691 58.14730 133.08653 37.46962
+## [24,] 95.87576 57.66651 134.08500 38.20925
+## 
+## $soybeans
+##           fcst    lower    upper        CI
+##  [1,] 495.8007 459.7146 531.8867  36.08606
+##  [2,] 501.8366 447.4817 556.1916  54.35499
+##  [3,] 510.9071 441.8247 579.9895  69.08242
+##  [4,] 522.6587 442.0961 603.2213  80.56263
+##  [5,] 537.7639 448.2049 627.3229  89.55899
+##  [6,] 551.0853 454.0797 648.0909  97.00560
+##  [7,] 555.6567 452.4319 658.8816 103.22483
+##  [8,] 561.4269 452.3478 670.5059 109.07904
+##  [9,] 559.4513 445.5901 673.3126 113.86128
+## [10,] 557.5198 439.2134 675.8261 118.30635
+## [11,] 560.7289 438.1449 683.3129 122.58402
+## [12,] 564.4312 437.7488 691.1135 126.68233
+## [13,] 568.7961 438.2415 699.3507 130.55456
+## [14,] 570.2805 435.8262 704.7348 134.45425
+## [15,] 571.3540 433.1089 709.5992 138.24517
+## [16,] 574.2451 432.1347 716.3555 142.11040
+## [17,] 578.3441 432.3149 724.3734 146.02923
+## [18,] 581.8634 431.9368 731.7901 149.92662
+## [19,] 584.0127 430.1470 737.8784 153.86572
+## [20,] 586.3722 428.6208 744.1235 157.75135
+## [21,] 589.0624 427.4117 750.7132 161.65078
+## [22,] 591.8112 426.2859 757.3365 165.52529
+## [23,] 593.9166 424.5350 763.2982 169.38159
+## [24,] 595.5702 422.3716 768.7688 173.19859
+## 
+## $gold
+##           fcst    lower    upper        CI
+##  [1,] 2316.562 2264.128 2368.997  52.43436
+##  [2,] 2333.922 2248.892 2418.952  85.03001
+##  [3,] 2357.978 2250.973 2464.983 107.00513
+##  [4,] 2359.955 2234.791 2485.119 125.16382
+##  [5,] 2354.973 2212.859 2497.087 142.11394
+##  [6,] 2330.108 2169.530 2490.685 160.57755
+##  [7,] 2320.676 2143.265 2498.087 177.41090
+##  [8,] 2333.575 2140.710 2526.441 192.86580
+##  [9,] 2341.985 2136.019 2547.950 205.96575
+## [10,] 2335.896 2117.727 2554.065 218.16862
+## [11,] 2326.315 2096.891 2555.739 229.42381
+## [12,] 2329.158 2088.890 2569.426 240.26765
+## [13,] 2334.535 2083.792 2585.277 250.74273
+## [14,] 2331.602 2071.335 2591.868 260.26646
+## [15,] 2325.457 2056.232 2594.681 269.22478
+## [16,] 2324.277 2046.226 2602.329 278.05141
+## [17,] 2324.948 2038.115 2611.781 286.83305
+## [18,] 2321.797 2026.436 2617.158 295.36099
+## [19,] 2318.381 2014.803 2621.960 303.57887
+## [20,] 2317.620 2005.963 2629.277 311.65716
+## [21,] 2316.995 1997.409 2636.581 319.58643
+## [22,] 2314.562 1987.347 2641.776 327.21474
+## [23,] 2311.679 1977.072 2646.287 334.60760
+## [24,] 2310.050 1968.216 2651.885 341.83415
+## 
+## $silver
+##           fcst    lower    upper        CI
+##  [1,] 29.26114 27.14253 31.37976  2.118618
+##  [2,] 29.42781 25.90832 32.94731  3.519494
+##  [3,] 30.44517 26.09117 34.79917  4.354000
+##  [4,] 31.38229 26.48931 36.27526  4.892975
+##  [5,] 31.25602 25.92443 36.58762  5.331595
+##  [6,] 29.73141 23.97862 35.48420  5.752789
+##  [7,] 28.92455 22.81320 35.03590  6.111353
+##  [8,] 29.40978 22.95335 35.86621  6.456428
+##  [9,] 29.81359 23.03606 36.59111  6.777526
+## [10,] 29.51079 22.41224 36.60935  7.098552
+## [11,] 29.14465 21.74553 36.54377  7.399119
+## [12,] 29.31240 21.62090 37.00391  7.691505
+## [13,] 29.50532 21.53369 37.47695  7.971634
+## [14,] 29.25366 21.02901 37.47832  8.224652
+## [15,] 28.90844 20.46221 37.35468  8.446235
+## [16,] 28.80893 20.16048 37.45738  8.648447
+## [17,] 28.72485 19.88636 37.56333  8.838487
+## [18,] 28.45548 19.43843 37.47253  9.017053
+## [19,] 28.23136 19.04119 37.42153  9.190171
+## [20,] 28.20680 18.84478 37.56882  9.362018
+## [21,] 28.19288 18.66172 37.72404  9.531159
+## [22,] 28.07371 18.37997 37.76744  9.693735
+## [23,] 27.95091 18.09947 37.80234  9.851435
+## [24,] 27.89906 17.89379 37.90433 10.005272
+## 
+## $urea_ee_bulk
+##           fcst    lower    upper        CI
+##  [1,] 348.8463 298.6100 399.0827  50.23634
+##  [2,] 343.2168 265.4379 420.9956  77.77885
+##  [3,] 373.6174 278.2944 468.9405  95.32304
+##  [4,] 419.2403 310.0115 528.4690 109.22873
+##  [5,] 429.9561 311.5060 548.4062 118.45013
+##  [6,] 402.2276 276.0342 528.4210 126.19338
+##  [7,] 379.5084 246.9540 512.0629 132.55444
+##  [8,] 388.0328 249.5542 526.5113 138.47858
+##  [9,] 405.5387 260.4222 550.6553 145.11655
+## [10,] 400.6403 248.7877 552.4929 151.85261
+## [11,] 388.4258 229.9266 546.9250 158.49918
+## [12,] 391.6954 226.8126 556.5782 164.88281
+## [13,] 401.7647 231.1904 572.3390 170.57430
+## [14,] 406.5446 231.1257 581.9635 175.41890
+## [15,] 402.6896 223.0324 582.3468 179.65719
+## [16,] 395.7165 212.4132 579.0198 183.30326
+## [17,] 391.9528 205.2852 578.6204 186.66761
+## [18,] 390.1227 200.3662 579.8793 189.75657
+## [19,] 388.2578 195.6001 580.9154 192.65767
+## [20,] 386.0517 190.5666 581.5367 195.48506
+## [21,] 384.7493 186.5822 582.9165 198.16716
+## [22,] 385.2402 184.4979 585.9824 200.74223
+## [23,] 386.0926 182.8664 589.3189 203.22623
+## [24,] 386.0004 180.3793 591.6215 205.62106
+## 
+## $maize
+##           fcst    lower    upper       CI
+##  [1,] 199.6549 183.9111 215.3988 15.74384
+##  [2,] 206.3766 181.6742 231.0789 24.70235
+##  [3,] 221.0948 189.9683 252.2214 31.12655
+##  [4,] 227.7902 191.2050 264.3753 36.58515
+##  [5,] 232.4664 191.1756 273.7573 41.29086
+##  [6,] 244.1158 199.1529 289.0786 44.96288
+##  [7,] 250.9486 202.8307 299.0665 48.11787
+##  [8,] 254.1813 203.0695 305.2931 51.11184
+##  [9,] 257.3446 203.6378 311.0513 53.70678
+## [10,] 261.1498 205.0540 317.2456 56.09581
+## [11,] 263.6259 205.3346 321.9173 58.29136
+## [12,] 263.4608 203.0845 323.8372 60.37637
+## [13,] 264.5060 202.1714 326.8406 62.33464
+## [14,] 266.3430 201.9432 330.7428 64.39979
+## [15,] 267.6619 201.2620 334.0619 66.39994
+## [16,] 268.1832 199.8067 336.5596 68.37642
+## [17,] 268.6109 198.3026 338.9192 70.30827
+## [18,] 269.5564 197.3528 341.7599 72.20355
+## [19,] 270.1453 196.0818 344.2089 74.06356
+## [20,] 270.4593 194.6032 346.3155 75.85615
+## [21,] 270.7512 193.1372 348.3651 77.61396
+## [22,] 270.8930 191.5611 350.2248 79.33181
+## [23,] 270.8386 189.8198 351.8574 81.01881
+## [24,] 270.8661 188.1932 353.5390 82.67288
+\end{verbatim}
+
+\end{document}
